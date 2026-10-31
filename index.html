@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b1b">
+  <meta name="description" content="NeonNova — a futuristic command center for bold digital ideas.">
+  <title>NeonNova | Command Center</title>
+  <link rel="icon" type="image/svg+xml" href="neonnova-logo.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="NeonNova home">
+      <img src="neonnova-logo.svg" alt="" class="brand-logo">
+      <span>NEON<span class="brand-accent">NOVA</span><small>FUTURE SYSTEMS</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav id="mainNav" class="nav">
+      <a href="#dashboards">Dashboards</a><a href="#systems">Systems</a><a href="#mission">Mission</a>
+      <a class="nav-cta" href="#launch">Initialize <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main id="appMain">
+    <section class="cover-hero hub-cover" id="home" aria-label="NeonNova command center cover">
+      <img class="cover-art" src="command-center-cover.png" alt="NeonNova futuristic command center cover">
+      <div class="cover-art-caption"><span><i class="pulse-dot"></i> NEONNOVA LOCAL COMMAND NETWORK</span><span>SELECT A WORKSPACE TO ENTER ↘</span></div>
+    </section>
+
+    <section class="section-wrap hub-section" id="mainDashboard">
+      <div class="section-heading"><div><div class="eyebrow">00 / MAIN DASHBOARD</div><h2>Choose your <span class="gradient-text">workspace.</span></h2></div><p>Every tool has its own dedicated dashboard. Choose a destination to enter it.</p></div>
+      <div class="dashboard-grid" role="group" aria-label="Open a dedicated dashboard">
+        <button class="dashboard-tile" data-dashboard="overview"><span class="tile-symbol">⌂</span><span class="tile-index">HUB_00</span><strong>Command Center</strong><small>Central operations and platform management</small><span class="tile-arrow">↗</span></button>
+        <button class="dashboard-tile" data-dashboard="studio"><span class="tile-symbol">⌘</span><span class="tile-index">LAB_01</span><strong>Coding Studio</strong><small>Web development workspace</small><span class="tile-arrow">↗</span></button>
+        <button class="dashboard-tile" data-dashboard="ai"><span class="tile-symbol">✳</span><span class="tile-index">AI_02</span><strong>AI Lab</strong><small>Ideas, prompts, and AI concepts</small><span class="tile-arrow">↗</span></button>
+        <button class="dashboard-tile" data-dashboard="learn"><span class="tile-symbol">◈</span><span class="tile-index">LEARN_03</span><strong>Learning Hub</strong><small>Lessons and learning paths</small><span class="tile-arrow">↗</span></button>
+        <button class="dashboard-tile" data-dashboard="projects"><span class="tile-symbol">▤</span><span class="tile-index">FILES_04</span><strong>My Projects</strong><small>Project planning and organization</small><span class="tile-arrow">↗</span></button>
+        <button class="dashboard-tile" data-dashboard="team"><span class="tile-symbol">◎</span><span class="tile-index">TEAM_05</span><strong>Collaboration</strong><small>Team planning workspace</small><span class="tile-arrow">↗</span></button>
+        <button class="dashboard-tile" data-dashboard="settings"><span class="tile-symbol">⚙</span><span class="tile-index">SYS_06</span><strong>System Settings</strong><small>Preferences and privacy notes</small><span class="tile-arrow">↗</span></button>
+        <button class="dashboard-tile" data-dashboard="tools"><span class="tile-symbol">↗</span><span class="tile-index">TOOLS_07</span><strong>Connected Tools</strong><small>GitHub, Supabase, and ChatGPT</small><span class="tile-arrow">↗</span></button>
+      </div>
+      <p class="dashboard-note hub-note"><span class="status-led"></span> HYBRID MODE • Coding Studio runs locally; cloud account and project features require internet access.</p>
+
+      <section class="command-overview" aria-label="Command center system overview">
+        <div class="overview-header">
+          <div>
+            <div class="eyebrow">COMMAND INTELLIGENCE / LIVE LOCAL READOUT</div>
+            <h3>Command <span class="gradient-text">Overview</span></h3>
+            <p>A single place to understand what NeonNova contains, where each tool belongs, and what is available in this local build.</p>
+          </div>
+          <div class="local-clock">
+            <span>LOCAL SYSTEM TIME</span>
+            <strong id="localClock">--:--:--</strong>
+            <small id="localDate">Waiting for browser clock…</small>
+          </div>
+        </div>
+
+        <div class="overview-metrics">
+          <article class="overview-metric"><span class="metric-icon">◈</span><span class="metric-label">WORKSPACES</span><strong>08</strong><small>Dedicated dashboard views</small></article>
+          <article class="overview-metric"><span class="metric-icon">⌁</span><span class="metric-label">RUN MODE</span><strong>LOCAL</strong><small>Runs in your browser</small></article>
+          <article class="overview-metric"><span class="metric-icon">⛨</span><span class="metric-label">EXTERNAL LINKS</span><strong>03</strong><small>Open only when selected</small></article>
+          <article class="overview-metric"><span class="metric-icon">◎</span><span class="metric-label">REMOTE HEALTH</span><strong>OFF</strong><small>Not configured in local mode</small></article>
+        </div>
+
+        <section class="overview-events" aria-label="Local events and alerts">
+          <div class="overview-panel-heading"><span class="panel-symbol">⌁</span><div><span class="eyebrow">EVENT MONITOR</span><h4>Recent events & alerts</h4></div></div>
+          <div class="event-list" id="eventList" aria-live="polite">
+            <div class="event-row"><span class="event-state event-info"></span><div><strong>Command Center initialized</strong><small>Local interface loaded in this browser.</small></div><time>Just now</time></div>
+            <div class="event-row"><span class="event-state event-warning"></span><div><strong>Remote monitoring unavailable</strong><small>No server health checks are configured in local-only mode.</small></div><time>Current session</time></div>
+            <div class="event-row"><span class="event-state event-info"></span><div><strong>External tools available</strong><small>GitHub, Supabase, and ChatGPT open only when selected.</small></div><time>On demand</time></div>
+          </div>
+          <p class="event-disclaimer">These are local interface events, not remote service telemetry. Real monitoring requires an explicitly configured service connection.</p>
+        </section>
+
+        <div class="overview-columns">
+          <article class="overview-panel">
+            <div class="overview-panel-heading"><span class="panel-symbol">▦</span><div><span class="eyebrow">SYSTEM DIRECTORY</span><h4>What belongs where</h4></div></div>
+            <ul class="system-directory">
+              <li><span class="directory-dot cyan"></span><span><strong>Command Center</strong><small>Navigation, system overview, and local status.</small></span><span class="directory-code">HUB_00</span></li>
+              <li><span class="directory-dot violet"></span><span><strong>Coding Studio</strong><small>Web project planning and code workspace.</small></span><span class="directory-code">LAB_01</span></li>
+              <li><span class="directory-dot magenta"></span><span><strong>AI Lab</strong><small>Prompt ideas, AI concepts, and debugging plans.</small></span><span class="directory-code">AI_02</span></li>
+              <li><span class="directory-dot green"></span><span><strong>Learning Hub</strong><small>Programming paths and practice planning.</small></span><span class="directory-code">LEARN_03</span></li>
+              <li><span class="directory-dot amber"></span><span><strong>My Projects</strong><small>Project plans, milestones, and build notes.</small></span><span class="directory-code">FILES_04</span></li>
+              <li><span class="directory-dot blue"></span><span><strong>Collaboration</strong><small>Team roles, task planning, and review workflows.</small></span><span class="directory-code">TEAM_05</span></li>
+              <li><span class="directory-dot pink"></span><span><strong>System Settings</strong><small>Interface, workspace behavior, and privacy notes.</small></span><span class="directory-code">SYS_06</span></li>
+              <li><span class="directory-dot mint"></span><span><strong>Connected Tools</strong><small>External links to GitHub, Supabase, and ChatGPT.</small></span><span class="directory-code">TOOLS_07</span></li>
+            </ul>
+          </article>
+
+          <article class="overview-panel">
+            <div class="overview-panel-heading"><span class="panel-symbol">⌘</span><div><span class="eyebrow">OPERATIONS</span><h4>System readiness</h4></div></div>
+            <div class="readiness-list">
+              <div class="readiness-row"><span><i class="readiness-light ready"></i>Dashboard navigation</span><strong>READY</strong></div>
+              <div class="readiness-row"><span><i class="readiness-light ready"></i>Neon theme switching</span><strong>READY</strong></div>
+              <div class="readiness-row"><span><i class="readiness-light ready"></i>External tool shortcuts</span><strong>READY</strong></div>
+              <div class="readiness-row"><span><i class="readiness-light ready"></i>Local code editor & preview</span><strong>READY</strong></div>
+              <div class="readiness-row"><span><i class="readiness-light planned"></i>AI model connection</span><strong>NOT CONNECTED</strong></div>
+              <div class="readiness-row"><span><i class="readiness-light planned"></i>Supabase cloud project save</span><strong>CONFIGURED • TEST REQUIRED</strong></div>
+            </div>
+            <div class="overview-callout"><strong>LOCAL-FIRST DESIGN</strong><p>NeonNova does not send dashboard data to a server. External websites open only when you click their links.</p></div>
+          </article>
+        </div>
+
+        <div class="overview-bottom">
+          <div><span class="eyebrow">CORE DIRECTIVE</span><h4>Build boldly. Keep control.</h4><p>Use the dedicated workspaces to plan, create, learn, and organize. Features marked planned still need to be built before they become fully functional.</p></div>
+          <button class="button button-primary" id="showBuildPlan" type="button">View development roadmap <span>↗</span></button>
+        </div>
+        <p class="roadmap-message" id="roadmapMessage" aria-live="polite"></p>
+      </section>
+    </section>
+
+    <section class="section-wrap dedicated-dashboard" id="dedicatedDashboard" hidden aria-live="polite">
+      <button class="back-to-hub" id="backToHub">← Back to Main Dashboard</button>
+      <div class="dedicated-heading">
+        <div class="eyebrow" id="viewEyebrow">HUB_00 / COMMAND CENTER</div>
+        <h2 id="viewTitle">Command Hub</h2>
+        <p id="viewDescription"></p>
+        <span class="panel-chip"><i></i> DEDICATED WORKSPACE • CONNECTION STATUS BELOW</span>
+      </div>
+      <div class="dedicated-card-grid" id="viewCards"></div>
+      <div class="dedicated-action-area" id="viewActions"></div>
+      <p class="dashboard-note" id="viewNote"></p>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#home"><img src="neonnova-logo.svg" alt=""><span>NEON<span class="brand-accent">NOVA</span><small>FUTURE SYSTEMS</small></span></a><span>© <span id="year"></span> NEONNOVA SYSTEMS</span><a href="#home">RETURN TO TOP ↑</a></footer>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
